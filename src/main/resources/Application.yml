@@ -1,10 +1,12 @@
+# Server properties
 server:
+  servlet:
+    context-path: /airline-api
   port: 8080
-
-# Oracle #
+# Spring properties
 spring:
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-
+  # Dev is active by default. This value can be overwritten by java arg param
+  profiles:
+    active: dev
+  application:
+    name: airline-api
