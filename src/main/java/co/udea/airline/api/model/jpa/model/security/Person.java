@@ -18,6 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Builder
 @AllArgsConstructor
@@ -76,6 +77,8 @@ public class Person implements UserDetails {
 
     private Boolean verified;
 
+    private Boolean isAccountNonLocked;
+
     @Column(name = "FAILED_LOGIN_ATTEMPTS")
     private Integer failedLoginAttempts;
 
@@ -115,7 +118,7 @@ public class Person implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return enabled;
+        return isAccountNonLocked;
     }
 
     @Override

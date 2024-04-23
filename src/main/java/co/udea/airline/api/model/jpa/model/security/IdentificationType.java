@@ -11,12 +11,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "IDENTIFICATION_TYPE")
-public class IdentificationType {
+public class IdentificationType implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,5 +1,6 @@
 package co.udea.airline.api.model.jpa.model.security;
 
+import java.io.Serializable;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -14,7 +15,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Position { // == Role
+public class Position implements Serializable { // == Role
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
